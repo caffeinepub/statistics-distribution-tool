@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Frost white and pink theme */
+    --background: 0.985 0.005 340;
+    --foreground: 0.18 0.02 340;
+    --card: 0.995 0.002 340;
+    --card-foreground: 0.18 0.02 340;
+    --popover: 0.995 0.002 340;
+    --popover-foreground: 0.18 0.02 340;
+
+    /* Primary: deep rose/pink */
+    --primary: 0.55 0.18 350;
+    --primary-foreground: 0.99 0 0;
+
+    /* Secondary: soft blush */
+    --secondary: 0.94 0.03 345;
+    --secondary-foreground: 0.35 0.08 350;
+
+    /* Muted: frost grey-pink */
+    --muted: 0.96 0.01 340;
+    --muted-foreground: 0.52 0.04 340;
+
+    /* Accent: vivid coral-pink */
+    --accent: 0.88 0.07 350;
+    --accent-foreground: 0.35 0.08 350;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.90 0.03 345;
+    --input: 0.92 0.02 345;
+    --ring: 0.55 0.18 350;
+
+    /* Charts */
+    --chart-1: 0.55 0.18 350;
+    --chart-2: 0.65 0.14 330;
+    --chart-3: 0.72 0.12 310;
+    --chart-4: 0.60 0.20 15;
+    --chart-5: 0.45 0.15 350;
+
+    --sidebar: 0.98 0.01 345;
+    --sidebar-foreground: 0.18 0.02 340;
+    --sidebar-primary: 0.55 0.18 350;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.94 0.03 345;
+    --sidebar-accent-foreground: 0.35 0.08 350;
+    --sidebar-border: 0.90 0.03 345;
+    --sidebar-ring: 0.55 0.18 350;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  code, pre, .mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .frost-glass {
+    background: oklch(0.99 0.005 340 / 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid oklch(0.90 0.03 345 / 0.6);
+  }
+
+  .pink-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.97 0.02 345),
+      oklch(0.93 0.05 350),
+      oklch(0.97 0.02 330)
+    );
+  }
+
+  .text-gradient-pink {
+    background: linear-gradient(135deg, oklch(0.55 0.18 350), oklch(0.45 0.20 335));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
